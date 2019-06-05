@@ -1,181 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
-}
-
-img.avatar {
-  width: 30%;
-  border-radius: 40%;
-}
-
-.container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-  
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-  
-}
-h2{
-	  position: absolute;
-	  left: 890px;
-  }
+<title>Sisselogimine</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<style type="text/css">
+	.btn-primary:hover{
+		background-color:#A52239;
+	}
+	.login-form {
+		width: 340px;
+    	margin: 60px auto;
+	}
+    .login-form form {
+    	margin-bottom: 15px;
+        background-color: ;
+		background-repeat: no-repeat;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .login-form h2 {
+        margin: 0 0 15px;
+    }
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+    .btn {        
+        font-size: 15px;
+		background-color: #A52239;
+        font-weight: bold;
+    }
 </style>
 </head>
 <body>
-
-<h2>Logi sisse!</h2>
-
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto">Login</button>
-
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Sulge">&times;</span>
-      <img src="thk.jpg" alt="Avatar" class="avatar" width="10px" height="400px">
-    </div>
-
-    <div class="container">
-      <label for="uname"><b>Kasutajanimi</b></label>
-      <input type="text" placeholder="Sisesta kasutajanimi" name="admin" required>
-
-      <label for="psw"><b>Salasõna</b></label>
-      <input type="password" placeholder="Sisesta salasõna" name="admin" required>
-        
-      <button onclick="window.location.href='index.php type="submit">Logi sisse</button>
-	  <button onclick="window.location.href='index.php">Logi sisse külalisena </button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Mäleta mind
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Tühista</button>
-    </div>
-  </form>
-  
+<div class="login-form">
+    <form action="admin_index.php" method="post">
+	<img SRC="thk.jpg" alt="thk logo" width=128px height=128px style="margin-left: 55px">
+        <h2 class="text-center"><b>Logi sisse</b></h2>       
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Nimisõna" name="Administraator" required>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="Salasõna" name="admin" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Logi sisse</button>
+        </div>
+        <div class="clearfix">
+            <label class="pull-left checkbox-inline"><input type="checkbox"> Mäleta mind</label>
+        </div>
+    </form>
 </div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
 </body>
-</html>
+</html> 

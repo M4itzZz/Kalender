@@ -3,7 +3,7 @@ include 'db_config.php';
 
 $conn = OpenCon();
 
-echo "Connected Successfully";
+//echo "Andmebaasiga ühendatud";
 
 CloseCon($conn);
 
@@ -11,7 +11,7 @@ CloseCon($conn);
 <!DOCTYPE html>
 <html>
 <head>
-<!--<script type="text/javascript">location.href = 'login.php';</script>-->
+<button onclick="window.location.href='login.php'" class="button">Logi sisse</button>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -33,7 +33,6 @@ CloseCon($conn);
     center: 'title',
     right: 'month, agendaWeek, agendaDay'
    },
-   events: "events.php",
    eventRender: function(event, element, view) {
     if (event.allDay === 'true') {
      event.allDay = true;
@@ -43,8 +42,9 @@ CloseCon($conn);
    },
    selectable: true,
    selectHelper: true,
+   displayEventTime: true,
    select: function(start, end, allDay) {
-   var title = prompt('Sisetage sündmus:'); //Saab lisada sündmuse, mis ilmub kalendril
+   var title = alert('Ainult administraator saab lisada sündmusi!'); //Saab lisada sündmuse, mis ilmub pärast kalendril
 
 
    if (title) {
@@ -86,7 +86,7 @@ CloseCon($conn);
    });
    },
    eventClick: function(event) { //kustutamis funkstioon
-	var decision = confirm("Kas te tahate seda ikka teha?"); 
+	var decision = confirm("Kas te tahate seda ikka kustutada?"); 
 	if (decision) {
 	$.ajax({
 		type: "POST",
@@ -151,6 +151,24 @@ CloseCon($conn);
 }
 .fc-unthemed td.fc-today {
 	background: #ff6666;
+}
+</style>
+<style>
+.button {
+  background-color: #A52239; 
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+}
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 </style>
 </head>
